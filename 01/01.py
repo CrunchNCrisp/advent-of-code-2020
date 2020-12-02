@@ -17,7 +17,7 @@ if __name__ == '__main__':
         return(-1,-1,-1)
 
     with open('./01/01-input.txt') as file:
-        entries = [int(x) for x in file.read().splitlines()]
+        entries = set([int(x) for x in file.read().splitlines()])
         
         k,v = find_pair(entries)
         print(k, v, k*v)
