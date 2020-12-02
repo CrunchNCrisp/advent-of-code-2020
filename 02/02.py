@@ -6,10 +6,7 @@ if __name__ == '__main__':
             if _ == c:
                 count +=1
 
-        if count >= min and count <= max:
-            return True
-        else:
-            return False
+        return count >= min and count <= max:
     
     def is_correct_part_two(pos1, pos2, c,  string):
         return (string[pos1-1] == c) != (string[pos2-1] == c)
