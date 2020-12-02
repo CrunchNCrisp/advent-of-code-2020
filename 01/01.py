@@ -1,26 +1,26 @@
 if __name__ == '__main__':
 
-    def is_correct_part_one(min, max, c,  string):
-        count = 0
-        for _ in string:
-            if _ == c:
-                count +=1
+    def find_pair(entries, sum = 2020):
+        for entry in entries:
+            key = sum - entry
+            if key in entries:
+                return(key, entry)
+        return (-1,-1)
 
-        if count >= min and count <= max:
-            return True
-        else:
-            return False
-    
-    def is_correct_part_two(pos1, pos2, c,  string):
-        return (string[pos1-1] == c) != (string[pos2-1] == c)
+    def find_triplet(entries, sum = 2020):
+        for entry in entries:
+            key = sum-entry
+            k,v = find_pair(entries, sum=key)
 
-    def get_count(entries, is_correct):
-        return len(list(filter(lambda x: is_correct(int(x[0]),int(x[1]),x[2],x[3]), entries)))
+            if (k,v) != (-1,-1):
+                return k,v,entry
+        return(-1,-1,-1)
 
-    with open('./02/02-input.txt') as file:
-        entries = [x.replace(':', '').replace('-', " ").split() for x in file.read().splitlines()]
-        print(get_count(entries, is_correct_part_one))
-        print(get_count(entries, is_correct_part_two))
+    with open('./01/01-input.txt') as file:
+        entries = [int(x) for x in file.read().splitlines()]
         
-        
-         
+        k,v = find_pair(entries)
+        print(k, v, k*v)
+
+        k,v,n = find_triplet(entries)
+        print(k,v,n, k*v*n)
