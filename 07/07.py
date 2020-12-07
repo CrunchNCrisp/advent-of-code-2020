@@ -35,10 +35,16 @@ if __name__ == '__main__':
         print(len(check_for_colors("shiny gold")))
 
         # Part Two
+        color_amount = {}
         def check_for_amount(color):
             total = 0
             for a, c in color_contains[color]:
                 total += a
-                total += a * check_for_amount(c)
+                if color in color_amount.keys():
+                    total += a * color_amount[color]
+                else:
+                    total += a * check_for_amount(c)
+            color_amount[color] = total
             return total
+        
         print(check_for_amount("shiny gold"))
