@@ -35,26 +35,15 @@ if __name__ == '__main__':
         print(len(check_for_colors("shiny gold")))
 
         # Part Two
-        def check_for_amount(color, cache=None):
+        def check_for_amount(color, color_amount):
             total = 0
             for a, c in color_contains[color]:
                 total += a
-                if cache is not None and c in cache:
-                    total += a * cache[c]
+                if c in color_amount:
+                    total += a * color_amount[c]
                 else:
-                    total += a * check_for_amount(c, cache)
-            if cache is not None and color not in cache:
-                cache[color] = total
+                    total += a * check_for_amount(c, color_amount)
+            color_amount[color] = total
             return total
 
-    a = datetime.datetime.now()
-    count = check_for_amount("shiny gold")
-    b = datetime.datetime.now() - a
-    print("Without dyn programming", b)
-    print(count)
-
-    a = datetime.datetime.now()
-    count = check_for_amount("shiny gold", {})
-    b = datetime.datetime.now() - a
-    print("With dyn programming", b)
-    print(count)
+    print(check_for_amount("shiny gold", {}))
