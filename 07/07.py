@@ -41,7 +41,7 @@ if __name__ == '__main__':
             for a, c in color_contains[color]:
                 total += a
                 if color in color_amount.keys():
-                    total += a * color_amount[color]
+                    total += a * color_amount[c]
                 else:
                     total += a * check_for_amount(c)
             color_amount[color] = total
