@@ -8,19 +8,21 @@ if __name__ == '__main__':
             if i != len(numbers[:-1]):
                 last_index[n] = i
 
-        while len(numbers) < 30000000:
-            last = numbers[-1]
-            prev_last = last_index.get(last, -1)
-            last_index[last] = len(numbers[:-1])
+        i = len(numbers)
+        n = numbers[-1]
+        while i < 30000000:
+            prev_last = last_index.get(n, -1)
+            last_index[n] = i - 1
             if prev_last == -1:
                 new_number = 0
             else:
-                new_number = len(numbers[:-1]) - prev_last
-            numbers.append(new_number)
-            
+                new_number = i - 1 - prev_last
+            n = new_number
+            i += 1
             # Part One
-            if len(numbers) == 2020:
+            if i == 2020:
                 print(new_number)
-        
+
+            
         # Part Two
         print(numbers[-1])
