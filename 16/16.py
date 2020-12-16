@@ -6,7 +6,6 @@ with open('./16/16.in') as file:
     lines = [x for x in file.read().splitlines()]
     
     field_ranges = defaultdict(list)
-
     # read in ranges and fields
     for line in lines:
         if line == "":
@@ -18,13 +17,9 @@ with open('./16/16.in') as file:
                 lb, ub = map(int, r.split("-"))
                 field_ranges[field_name].append(list(range(lb, ub+1)))
 
-    # read in my ticket
+    # read in tickets
     my_ticket = list(map(int, lines[lines.index('your ticket:')+1].split(",")))
-
-    # read in nearby tickets
-    nearby_tickets = []
-    for line in lines[lines.index('nearby tickets:')+1:]:
-        nearby_tickets.append(list(map(int, (line.split(",")))))
+    nearby_tickets = [list(map(int, (line.split(",")))) for line in lines[lines.index('nearby tickets:')+1:]]
 
     # Part One
     all_values = set(chain.from_iterable(list(chain.from_iterable(field_ranges.values()))))
