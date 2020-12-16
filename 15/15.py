@@ -21,8 +21,8 @@ if __name__ == '__main__':
             i += 1
             # Part One
             if i == 2020:
-                print(new_number)
+                print(n)
 
             
         # Part Two
-        print(numbers[-1])
+        print(n)
