@@ -2,7 +2,7 @@ import numpy as np
 import collections
 from pprint import pprint
 
-with open('./17/17.in') as file:
+with open('./17/input.txt') as file:
     lines = [x.strip() for x in file.read().splitlines()]
 
     # Part One

@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
 
 
-    with open('./08/08.in') as file:
+    with open('./08/input.txt') as file:
         instructions = [x.split(" ") for x in file.read().splitlines()]
         print(run_programm(instructions))
 

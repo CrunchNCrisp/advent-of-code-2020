@@ -39,7 +39,7 @@ if __name__ == '__main__':
 
 
 
-    with open('./09/09.in') as file:
+    with open('./09/input.txt') as file:
         numbers = [int(x) for x in file.read().splitlines()]
 
         x = find_defect(numbers, 25)

@@ -2,7 +2,7 @@ import re
 
 if __name__ == '__main__':
 
-       with open('./06/06.in') as file:
+       with open('./06/input.txt') as file:
         groups = [x for x in file.read().split("\n\n")]
         
         # Part One

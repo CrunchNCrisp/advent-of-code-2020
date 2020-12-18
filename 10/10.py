@@ -1,6 +1,6 @@
 if __name__ == '__main__':
 
-    with open('./10/10.in') as file:
+    with open('./10/input.txt') as file:
         adapters = [int(x) for x in file.read().splitlines()]
         adapters.append(0)
         adapters.sort()

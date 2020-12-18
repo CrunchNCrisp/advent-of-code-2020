@@ -3,7 +3,7 @@ import collections
 if __name__ == '__main__':
 
 
-    with open('./07/07.in') as file:
+    with open('./07/input.txt') as file:
         bag_list = [x for x in file.read().splitlines()]
 
         color_contains = collections.defaultdict(list)

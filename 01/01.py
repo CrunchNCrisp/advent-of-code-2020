@@ -16,7 +16,7 @@ if __name__ == '__main__':
                 return k,v,entry
         return(-1,-1,-1)
 
-    with open('./01/01-input.txt') as file:
+    with open('./01/input.txt') as file:
         entries = set([int(x) for x in file.read().splitlines()])
         
         k,v = find_pair(entries)

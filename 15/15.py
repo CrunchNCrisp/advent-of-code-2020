@@ -1,6 +1,6 @@
 if __name__ == '__main__':
 
-    with open('./15/15.in') as file:
+    with open('./15/input.txt') as file:
         numbers = [int(x) for x in file.readline().split(",")]
         last_index = {}
 

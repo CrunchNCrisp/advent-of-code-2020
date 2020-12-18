@@ -37,7 +37,7 @@ if __name__ == '__main__':
                
 
 
-    with open('./13/13.in') as file:
+    with open('./13/input.txt') as file:
         timestamp = int(file.readline())
         all_buses = file.readline().split(',')
         all_buses = [int(b) if b != "x" else b for b in all_buses ]

@@ -17,7 +17,7 @@ def evaluate(expression, part_two=False):
     return eval(expression, {}, {"aoc_int": aoc_int})
 
 
-with open('./18/18.in') as file:
+with open('./18/input.txt') as file:
     lines = [x.strip() for x in file.read().splitlines()]
 
     # Part One

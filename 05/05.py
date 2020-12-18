@@ -26,7 +26,7 @@ if __name__ == '__main__':
         col = binary_search(boarding_pass[7:], seat_list)
         return (row * 8) + col
 
-    with open('./05/05.in') as file:
+    with open('./05/input.txt') as file:
         entries = [x.replace("L","0").replace("R","1").replace("F","0").replace("B","1") for x in file.read().splitlines()]
         seat_ids = [get_seat_id(x) for x in entries]
         print(max(seat_ids))

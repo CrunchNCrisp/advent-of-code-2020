@@ -18,7 +18,7 @@ if __name__ == '__main__':
             return -y, x
 
 
-    with open('./12/12.in') as file:
+    with open('./12/input.txt') as file:
         directions = [ (x[0], int(x[1:])) for x in file.read().splitlines()]
         ds = {
             "N" : 0,

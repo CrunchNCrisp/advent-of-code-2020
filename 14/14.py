@@ -15,7 +15,7 @@ if __name__ == '__main__':
             yield from generate_addresses(address.replace('X', '1', 1))
             yield from generate_addresses(address.replace('X', '0', 1))
 
-    with open('./14/14.in') as file:
+    with open('./14/input.txt') as file:
         instructions = [x.split(" = ") for x in file.read().splitlines()]
         
         current_mask = []

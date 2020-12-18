@@ -42,7 +42,7 @@ if __name__ == '__main__':
                 if seats[y][x] == '#' and adjacents.count('#') >= thresshold:
                     seats[y][x] = 'L'
 
-    with open('./11/11.in') as file:
+    with open('./11/input.txt') as file:
         seats = [['.'] + list(x) + ['.'] for x in file.read().splitlines()]
         seats.insert(0, ['.'] * len(seats[0]))
         seats.append(['.'] * len(seats[0]))

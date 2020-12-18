@@ -15,7 +15,7 @@ if __name__ == '__main__':
         entries = [1 for x in entries if is_correct(int(x[0]),int(x[1]),x[2],x[3])]
         return len(entries)
 
-    with open('./02/02-input.txt') as file:
+    with open('./02/input.txt') as file:
         entries = [x.replace(':', '').replace('-', " ").split() for x in file.read().splitlines()]
         print(get_count(entries, is_correct_part_one))
         print(get_count(entries, is_correct_part_two))

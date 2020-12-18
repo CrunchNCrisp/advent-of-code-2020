@@ -33,7 +33,7 @@ if __name__ == '__main__':
         pid = re.fullmatch(r'\d{9}', entry['pid'])
         return all((byr, iyr, eyr, hgt, hcl, ecl, pid))
         
-    with open('./04/04-input.txt') as file:
+    with open('./04/input.txt') as file:
         entries = [line_to_dict(x.replace("\n", " ")) for x in file.read().split("\n\n")]
 
         count = 0

@@ -2,7 +2,7 @@ import re
 from collections import defaultdict
 from itertools import chain
 
-with open('./16/16.in') as file:
+with open('./16/input.txt') as file:
     lines = [x for x in file.read().splitlines()]
     
     field_ranges = defaultdict(list)

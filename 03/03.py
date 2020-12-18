@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
         return count
 
-    with open('./03/03-input.txt') as file:
+    with open('./03/input.txt') as file:
         lines = [x for x in file.read().splitlines()]
 
         slopes = [(3,1), (1,1), (5,1), (7,1), (1,2)]
