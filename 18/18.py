@@ -1,19 +1,22 @@
 import re
 
 class aoc_int(int):
-    def __mul__(self, other):
-        return aoc_int(int(self) + other)
-    def __add__(self, other):
+    def __pow__(self, other):
         return aoc_int(int(self) + other)
     def __sub__(self, other):
         return aoc_int(int(self) * other)
+    def __mul__(self, other):
+        return aoc_int(int(self) * other)
+    def __add__(self, other):
+        return aoc_int(int(self) + other)
 
 
 def evaluate(expression, part_two=False):
     expression = re.sub(r"(\d+)", r"aoc_int(\1)", expression)
-    expression = expression.replace("*", "-")
-    if part_two:
-        expression = expression.replace("+", "*")
+    if not part_two:
+        expression = expression.replace("*", "-")
+    else:
+        expression = expression.replace("+", "**")
     return eval(expression, {}, {"aoc_int": aoc_int})
 
 
