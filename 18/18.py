@@ -13,10 +13,7 @@ class aoc_int(int):
 
 def evaluate(expression, part_two=False):
     expression = re.sub(r"(\d+)", r"aoc_int(\1)", expression)
-    if not part_two:
-        expression = expression.replace("*", "-")
-    else:
-        expression = expression.replace("+", "**")
+    expression = expression = expression.replace("+", "**") if part_two else expression.replace("*", "-") 
     return eval(expression, {}, {"aoc_int": aoc_int})
 
 
